@@ -1,3 +1,27 @@
-<h1>
-  Welcome to BucketList
-</h1>
+
+<div id="wrapper" class="toggled">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                       Bucket List Application
+                    </a>
+                </li>
+
+                <li>
+                        <a routerLink="/Home" >Home</a>
+                </li>
+                <li>
+                        <a routerLink="/List" routerLinkActive="active">Your Bucket List</a>
+                </li>
+           
+                <li>
+                    <a href="#">Settings</a>
+                </li>
+            </ul>
+        </div>
+    
+<router-outlet></router-outlet>
+  </div>
