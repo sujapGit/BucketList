@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div id="user-data">
+                    <div class="form-group">
+                        <label for="bucketName">Name</label>
+                        <input type="text" id="bucketName" class="form-control" ngModel name="bucketName" required #name="ngModel">
+
+                        <span class="help-block" *ngIf="!name.valid && name.touched">
+                            Please enter name !
+                        </span>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" class="form-control" ngModel name="location" required #location="ngModel" [ngModel]="defaultLocation">
+                        <p *ngIf="!location.valid && location.touched "> Please enter location !</p>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" class="form-control" ngModel name="date" required #date="ngModel" [ngModel]="defaultDate">
+                        <p *ngIf="!date.valid && date.touched">Please enter date !</p>
+
+                    </div>
+
+                    <div>
+                        <label for="mission">Set Missions</label>
+                        <input type="text" id="mission" class="form-control" ngModel name="mission" #mission="ngModel">
+
+
+                        <input type="text" id="missionAdded1" *ngIf="addMore > 0" class="form-control" ngModel name="missionAdded2" #missionAdded2="ngModel">
+
+                        <p (click)=onAddMoreClick()>Add More</p>
+                        <p *ngIf="!mission.valid && mission.touched">Please enter a number</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" class="form-control" ngModel name="description" required ng-minlength="100" #description="ngModel">
+                            </textarea>
+                        <p *ngIf="!description.valid && description.touched">Please enter description more than 100 keywords !</p>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary" [disabled]="!f.valid">
+                            Submit
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
