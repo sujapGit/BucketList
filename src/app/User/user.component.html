@@ -1,0 +1,103 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8">
+            <!-- Reactive Form -->
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="userName">User Name</label>
+                    <input type="text" id="userName" formControlName="userName" class="form-control">
+                    <span *ngIf="!signupForm.get('userName').valid && signupForm.get('userName').touched" class="help-block">
+                        Enter User Name
+                    </span>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" formControlName="email" id="email" class="form-control">
+                    <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched" class="help-block">
+                        Enter Email Address
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password"> Password</label>
+                    <input type="password" formControlName="password" id="password" class="form-control">
+                    <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched" class="help-block">
+                      
+                        <span *ngIf="signupForm.get('password').errors['invalidPassword']" class="help-block">
+                                Password should not be username<br>
+                           </span>
+                           <span *ngIf="signupForm.get('password').errors['required']" class="help-block">
+                                Password is required
+                           </span>
+                    </span>
+                   
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" formControlName="confirmPassword" id="confirmPassword" class="form-control">
+                    <span *ngIf="!signupForm.get('confirmPassword').valid && signupForm.get('confirmPassword').touched" class="help-block">
+                        Confirm Password
+                    </span>
+                 
+                   
+                </div>
+
+                <div class="radio" *ngFor='let gender of genders'>
+                    <label>
+                        <input type="radio" formControlName="gender" [value]="gender">{{gender}}
+                    </label>
+                </div>
+
+                <!-- Address -->
+                <diV formGroupName="dataAddress">
+                        <div class="form-group">
+                                <label for="Address">Address</label>
+                                <input type="text" formControlName="address" id="address" class="form-control">
+                                <span *ngIf="!signupForm.get('dataAddress.address').valid && signupForm.get('dataAddress.address').touched" class="help-block">
+                                    Enter Address
+                                </span>
+            
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="City">City</label>
+                                <input type="text" formControlName="city" id="city" class="form-control">
+                                <span *ngIf="!signupForm.get('dataAddress.city').valid && signupForm.get('dataAddress.city').touched" class="help-block">
+                                    Enter City
+                                </span>
+            
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="State">State</label>
+                                <input type="text" formControlName="state" id="state" class="form-control">
+                                <span *ngIf="!signupForm.get('dataAddress.state').valid && signupForm.get('dataAddress.state').touched" class="help-block">
+                                        please provide state
+                                </span>
+            
+                            </div>
+                            <countryPicker></countryPicker>
+            
+                            <div class="form-group">
+                                <label for="Country">Country</label>
+                                <input type="text" formControlName="country" id="country" class="form-control">
+                                <span *ngIf="!signupForm.get('dataAddress.country').valid && signupForm.get('dataAddress.country').touched" class="help-block">
+                                    please select country
+                                </span>
+            
+                            </div>
+                </diV>
+            
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">
+                        Create
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
