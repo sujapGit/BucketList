@@ -21,7 +21,7 @@
 
                 <div class="form-group">
                     <label for="password"> Password</label>
-                    <input type="password" formControlName="password" id="password" class="form-control">
+                    <input type="password" formControlName="password" id="password" class="form-control" (change)="clearConfrimPassword()">
                     <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched" class="help-block">
                       
                         <span *ngIf="signupForm.get('password').errors['invalidPassword']" class="help-block">
@@ -38,9 +38,15 @@
                     <label for="confirmPassword">Confirm Password</label>
                     <input type="password" formControlName="confirmPassword" id="confirmPassword" class="form-control">
                     <span *ngIf="!signupForm.get('confirmPassword').valid && signupForm.get('confirmPassword').touched" class="help-block">
-                        Confirm Password
+                      
+                    <span *ngIf="signupForm.get('confirmPassword').errors['required'] && signupForm.get('confirmPassword').touched" class="help-block">
+                        Confrim Password <br>
                     </span>
-                 
+                    <span *ngIf="signupForm.get('confirmPassword').errors['passwordMismatch'] && signupForm.get('confirmPassword').touched" class="help-block">
+                        Confrim Password must be equal to Password
+                    </span>
+                    </span>
+
                    
                 </div>
 
@@ -78,15 +84,12 @@
                                 </span>
             
                             </div>
-                            <countryPicker></countryPicker>
-            
+
                             <div class="form-group">
-                                <label for="Country">Country</label>
-                                <input type="text" formControlName="country" id="country" class="form-control">
-                                <span *ngIf="!signupForm.get('dataAddress.country').valid && signupForm.get('dataAddress.country').touched" class="help-block">
-                                    please select country
-                                </span>
-            
+                                    <label for="Country">Country</label>
+                                    <select formControlName="country" id="country" class="form-control" [(ngModel)]="selectedTemplate"> 
+                                            <option *ngFor="let l of list">{{l.name}}</option>
+                                          </select>
                             </div>
                 </diV>
             

@@ -8,6 +8,8 @@ import { BucketListComponent } from './BucketList/bucket.component';
 import { HomeComponent } from './Home/home.component';
 import { BucketFormComponent } from './BucketList/BucketForm/bucketForm.component';
 import { UserComponent } from './User/user.component';
+import { AppServices } from './app.services';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -22,10 +24,12 @@ import { UserComponent } from './User/user.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
+    
     
   ],
-  providers: [],
+  providers: [AppServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
