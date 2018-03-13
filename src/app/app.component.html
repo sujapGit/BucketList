@@ -6,19 +6,32 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                       Bucket List Application
+                       <h2 class='panel-heading'>
+                        {{title}}
+                      </h2>
+                      <hr/>
                     </a>
                 </li>
-
                 <li>
-                        <a routerLink="/home" >Home</a>
+                    <a routerLink="/home" >Home</a>
                 </li>
-                <li>
+                <li *ngIf="isLogIn">
                         <a routerLink="list">Your Bucket List</a>
                 </li>
-           
                 <li>
+                    <a href="#">About us</a>
+                </li>
+                <li *ngIf="isLogIn">
                     <a href="#">Settings</a>
+                </li>
+                <li *ngIf="!isLogIn">
+                    <a href="#">Register</a>
+                </li>
+                <li *ngIf="isLogIn">
+                    <a href="#">Logout</a>
+                </li>
+                <li *ngIf="!isLogIn">
+                    <a href="#">Login</a>
                 </li>
             </ul>
         </div>

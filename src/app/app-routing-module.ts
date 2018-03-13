@@ -9,7 +9,8 @@ const appRoute : Routes =[
     {path:"",redirectTo:'/home',pathMatch:'full'},
     {path:"home",component:HomeComponent},
     { path: 'list', component: BucketListComponent },
-    { path: 'bucketList/New', component: BucketFormComponent },
+    { path: 'project/:projectId', component: BucketFormComponent },
+    { path: 'project/New', component: BucketFormComponent },
     {path:'user/New',component:UserComponent}
    
 ]

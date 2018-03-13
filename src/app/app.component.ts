@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppServices } from './app.services';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Bucket List Application';
+  title = '';
+  public isLogIn :boolean = true; 
+  constructor(private _appService: AppServices){
+    
+    this._appService.sayHello()
+    .subscribe(
+      result => {
+        this.title = result;
+      }
+    )
+
+     
+  
+  
+  
+  }
+
+
+
+
 }

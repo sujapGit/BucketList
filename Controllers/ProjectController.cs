@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ProjectApi;
 
@@ -22,12 +23,38 @@ namespace ProjectApi
         [HttpGet]
 
         [Route("GetProjects")]
-        public IEnumerable<Project> GetAllProjectList()
+        public  async Task<IEnumerable<Project>>  GetAllProjectList()
         {
-            return _ip.GetAllProjectList();
+            return await _ip.GetAllProjectList();
         }
 
+        [HttpPut]
+        [Route("GetProjectById/{projectId}")]
+        public async Task<Project> GetProjectById(int projectId)
+        {
+            return await _ip.GetProjectById(projectId);
+        }
 
+        [HttpPost]
+        [Route("AddProject")]
+
+        public async Task<bool> AddProject([FromBody] Project project)
+        {
+            return await _ip.AddProject(project);
+        }
+        [HttpPost]
+        [Route("UpdateProject")]
+        public async Task<bool> UpdateProject([FromBody] Project project) {
+            return await _ip.UpdateProject(project);
+         }
+
+        [HttpPost]
+        [Route("DeleteProject")]
+
+        public async Task<string>  DeleteProject(string projectId) {
+           
+            return await _ip.DeleteProject(4);
+         }
 
     }
 

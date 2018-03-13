@@ -1,0 +1,10 @@
+C:\Users\sujan\Desktop\BucketList\obj\Debug\netcoreapp2.0\BucketList.csproj.CoreCompileInputs.cache
+C:\Users\sujan\Desktop\BucketList\obj\Debug\netcoreapp2.0\BucketList.AssemblyInfoInputs.cache
+C:\Users\sujan\Desktop\BucketList\obj\Debug\netcoreapp2.0\BucketList.AssemblyInfo.cs
+C:\Users\sujan\Desktop\BucketList\bin\Debug\netcoreapp2.0\BucketList.deps.json
+C:\Users\sujan\Desktop\BucketList\bin\Debug\netcoreapp2.0\BucketList.runtimeconfig.json
+C:\Users\sujan\Desktop\BucketList\bin\Debug\netcoreapp2.0\BucketList.runtimeconfig.dev.json
+C:\Users\sujan\Desktop\BucketList\bin\Debug\netcoreapp2.0\BucketList.dll
+C:\Users\sujan\Desktop\BucketList\bin\Debug\netcoreapp2.0\BucketList.pdb
+C:\Users\sujan\Desktop\BucketList\obj\Debug\netcoreapp2.0\BucketList.dll
+C:\Users\sujan\Desktop\BucketList\obj\Debug\netcoreapp2.0\BucketList.pdb

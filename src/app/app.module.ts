@@ -11,6 +11,14 @@ import { UserComponent } from './User/user.component';
 import { AppServices } from './app.services';
 import { HttpModule } from '@angular/http';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { ButtonModule } from '@progress/kendo-angular-buttons/dist/es/button/button.module';
+import { ProjectServices } from './BucketList/ProjectService';
+import { PopupModule } from '@progress/kendo-angular-popup/dist/es2015/popup.module';
+import {GridModule} from '@progress/kendo-angular-grid';
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -25,11 +33,18 @@ import { HttpModule } from '@angular/http';
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    GridModule,
+    PopupModule,
+    HttpClientModule 
+
+    
     
     
   ],
-  providers: [AppServices],
+  providers: [AppServices,ProjectServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
